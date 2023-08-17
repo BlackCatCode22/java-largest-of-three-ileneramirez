@@ -1,74 +1,65 @@
-/* LargestOfThree.java
-*
-* dH 2/15/23
-* Approved solution for Java programming class
-* References:
-*   https://www.w3schools.com/java/java_user_input.asp
-*   https://www.w3schools.com/java/java_conditions.asp
-*   https://www.w3schools.com/java/java_variables.asp
-*
-* input: three ints from user
-* processing: find the largest of the three ints with decision structures
-* output: the largest of three ints, the sum of three ints
- */
 
 import java.util.Scanner;
 
 public class LargestOfThree {
     public static void main(String[] args) {
-        System.out.println("\n\n The Largest of Three Program \n\n");
 
-        // Get three ints from the user.
+        System.out.printf("\n\nWelcome to my Largest of Three program\n\n!");
+
+        //Variable declaration
+        String userName;
         int num1 = 0;
         int num2 = 0;
         int num3 = 0;
-        int total = 0;
         int largest = 0;
+        // create scanner
+        Scanner scanner = new Scanner (System.in);
 
-        // Create a scanner object for user input.
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("\n Please enter your name!:");
+        //store userName into the variable need 'userName'
 
-        // Prompt the user for the first integer.
-        System.out.println("\n\n Please enter an integer for num1: ");
+        userName = scanner.nextLine();
 
-        // Input user reply to num1
-        num1 = Integer.parseInt(scanner.nextLine());
+        //output userName
+        System.out.println("\n The username is: " + userName);
 
-        // Prompt the user for the second integer.
-        System.out.println("\n\n Please enter the second integer: ");
+        // Get the three ints from the user:
+        // Prompt for the first int.
+        System.out.println("Enter number one: ");
+        num1 = scanner.nextInt();
+        // Output num1...
+        System.out.println("\n You entered: " + num1 + " for the first number.");
 
-        // Input user reply to num1
-        num2 = Integer.parseInt(scanner.nextLine());
+        //Prompt for the second int.
+        System.out.println("Enter the second number: ");
+        num2 = scanner.nextInt();
+        System.out.println("\n You entered: " + num2 + " for the second number.");
 
-        // Prompt the user for the third integer.
-        System.out.println("\n\n Please enter the third and last integer: ");
+        //Prompt for the third int.
+        System.out.println("Enter number three: ");
+        num3 = scanner.nextInt();
+        //output num3
 
-        // Input user reply to num1
-        num3 = Integer.parseInt(scanner.nextLine());
+        System.out.println("\n You entered: " + num3 + " for the third number.");
 
-        total = num1 + num2 + num3;
+        System.out.println("\n You entered: " + num1 + " and " + num2 + " and " + num3);
 
-        System.out.println("\n The sum of " + num1 + " and " + num2 + " and " + num3 + " is: " + total);
-
-        // Find the largest of three ints with decisions.
-        if (num1 > num2) {
-            if (num1 > num3) {
-                largest = num1;
-            }
-            else {
-                largest = num2;
-            }
+        // find the largest
+        if (num1 > num2 & num1 > num3) {
+            largest = num1;
         }
-        else {
-            if (num2 > num3) {
-                largest = num2;
-            }
-            else {
-                largest = num3;
-            }
+        if (num2 > num1 & num2 > num3) {
+            largest = num2;
+        }
+        if (num3 > num1 & num3 > num2){
+            largest = num3;
+
         }
 
-        System.out.println("\n\n The largest of " + num1 + " and " + num2 + " and " + num3 + " is: " + largest);
+        // Output the largest number:
+        System.out.println("\n The largest of " + num1 + " and " + num2 + " and " + num3 + " is : " + largest);
+
+
+        }
 
     }
-}
